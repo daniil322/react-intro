@@ -1,0 +1,32 @@
+.black {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+.red {
+  color: red;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexColmn {
+  flex-direction: column;
+}
+.netflix {
+  width: 60px;
+  height: 60px;
+}
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+}
+
+.container{
+  text-align: center;
+  justify-content: center;
+}
