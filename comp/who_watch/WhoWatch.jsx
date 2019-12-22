@@ -1,8 +1,9 @@
 import UserList from "./UserList.jsx";
 import User from "./User.jsx";
+import Modal from "./WhoWatchAdd.jsx";
 
 export default class WhoWatch extends React.Component {
-  state = { userName: false, users: this.props.users };
+  state = { userName: false, users: this.props.users, addScreen: false };
 
   logOut = () => {
     this.setState({
@@ -22,13 +23,18 @@ export default class WhoWatch extends React.Component {
     }));
   };
 
-  onAddClick = () => {
-    let name = prompt("Enter Name");
+  onAddClick = name => {
     this.state.users.push(name);
     this.setState(prevState => ({
       users: prevState.users
     }));
   };
+  
+  onMoodalToggle=()=>{
+    this.setState((prevState)=>({
+      addScreen:!prevState.addScreen
+    }))
+  }
 
   getSelectd = () => {
     const { userName } = this.state;
@@ -43,7 +49,7 @@ export default class WhoWatch extends React.Component {
   };
 
   getList = () => {
-    const { users } = this.state;
+    const { users, addScreen } = this.state;
     return (
       <div className="flex">
         <UserList
@@ -51,7 +57,8 @@ export default class WhoWatch extends React.Component {
           onDelete={this.onDeleteClick}
           onLogin={this.logIn}
         />
-        <button onClick={this.onAddClick}>Add</button>
+        <button onClick={this.onMoodalToggle}>Add</button>
+        <Modal addUser={this.onAddClick} toggle={this.onMoodalToggle} modal={addScreen} />
       </div>
     );
   };

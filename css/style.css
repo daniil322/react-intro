@@ -30,3 +30,34 @@ body {
   text-align: center;
   justify-content: center;
 }
+
+.modal-none{
+  display: none;
+}
+.modal-inline{
+  display: inline;
+}
+
+.modal{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height:100%;
+  background-color: #ffffff6e;
+}
+.modalMain{
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  height: 6vh;
+  position: fixed;
+  background-color: rgb(31, 130, 187)
+}
+
+h3{
+  margin: 0;
+}
+input{
+  height: 5%;
+}
